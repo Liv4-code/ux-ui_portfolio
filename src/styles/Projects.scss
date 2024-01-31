@@ -1,0 +1,239 @@
+$breakpoint-laptop: 1025px;
+$breakpoint-tablet: 768px;
+$breakpoint-cellphone: 600px;
+$breakpoint-sml-cellphone: 500px;
+$breakpoint-xsml-cellphone: 400px;
+
+.projects-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 1vh 0 0 2vw;
+        font-size: 18px;
+        color: #505068;
+        font-weight: bold;
+    }
+
+    .projects {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & div {
+            display: flex;
+        }
+    }
+
+    .card {
+        margin: 0 2vw 1vw 2vw;
+        padding: 3%;
+        width: 26vw;
+        height: 26vh;
+        color: rgb(241, 241, 241);
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-right: 2px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(25px);
+    }
+
+    a {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card_project-title {
+        text-align: center;
+        color: #333340;
+        font-size: 28px;
+    }
+
+    .card_project-description {
+        text-align: center;
+        color: #333340;
+        font-size: 1.54vw;
+        margin-top: 10px;
+        height: 80%;
+    }
+}
+
+.projects-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    animation: fade-in-projects 3s ease-in-out 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-projects {
+    from {
+        opacity: 0%;
+        background-image: url("../../public/assets/Projects-LR-1.webp");
+    }
+
+    to {
+        opacity: 100%;
+        background-image: url("../../public/assets/Projects-Desktop.webp");
+    }
+}
+
+@keyframes fade-in-projects-laptop {
+    from {
+        opacity: 0%;
+        background-image: url("../../public/assets/Projects-Mobile-LR.webp");
+    }
+
+    to {
+        opacity: 100%;
+        background-image: url("../../public/assets/Projects-Mobile.webp");
+    }
+}
+
+@keyframes fade-in-card {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@media (max-width: $breakpoint-laptop) {
+    .card {
+        margin: 0 2vw 2vw 2vw !important;
+        height: 41vh !important;
+        width: 28vw !important;
+    }
+
+    .projects-container::before {
+        animation: fade-in-projects-laptop 2s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .projects-container__heading {
+        bottom: 350px !important;
+        padding: 10px !important;
+    }
+
+    .card_project-title {
+        height: 26%;
+        font-size: 26px !important;
+    }
+
+    .card_project-description {
+        font-size: 2.1vw !important;
+        height: 77% !important;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .projects-container {
+        height: 140vh;
+
+        &__heading {
+            display: none;
+        }
+
+        &::before {
+            height: 140vh;
+        }
+
+        .projects {
+            height: inherit;
+
+            & div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: inherit;
+                margin-bottom: 5vh;
+            }
+
+            &__heading {
+                display: block;
+                margin-bottom: 12%;
+            }
+        }
+    }
+
+    .projects {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card {
+        width: 68vw !important;
+        height: 20vh !important;
+    }
+
+    .card_project-description {
+        font-size: 2.9vw !important;
+    }
+}
+
+@media (max-width: $breakpoint-cellphone) {
+    .projects-container {
+        height: 195vh !important;
+    }
+
+    .projects-container::before {
+        height: 220vh;
+        width: 100vw;
+    }
+
+    .projects {
+        height: 200vh !important;
+
+        &__heading {
+            width: 200px !important;
+            margin-top: -70px;
+        }
+    }
+
+    .card {
+        height: 20% !important;
+        padding: 5vw !important;
+    }
+
+    .card_project-title {
+        height: 15%;
+        font-size: 4.5vw !important;
+    }
+
+    .card_project-description {
+        font-size: 3vw !important;
+    }
+}
+
+@media (max-width: $breakpoint-sml-cellphone) {
+    .card_project-description {
+        font-size: 5.8vw !important;
+    }
+}
+
+@media (max-width: $breakpoint-xsml-cellphone) {
+    .card_project-title {
+        font-size: 6.5vw !important;
+    }
+
+    .card_project-description {
+        font-size: 5.2vw !important;
+    }
+}

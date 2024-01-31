@@ -1,0 +1,155 @@
+$breakpoint-tablet: 768px;
+$breakpoint-cellphone: 600px;
+$breakpoint-sml-cellphone: 500px;
+$breakpoint-xsml-cellphone: 400px;
+
+.contact-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: #333340;
+    animation: fade-in-contact 3s ease-in-out 1;
+    animation-fill-mode: forwards;
+
+    h5 {
+        margin: 1vh 0 0 2vw;
+        font-size: 18px;
+        color: #505068;
+        font-weight: bold;
+    }
+}
+
+.contact-glass-card {
+    margin: auto;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 15%;
+    width: 600px;
+    height: 60vh;
+    padding: 2%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+
+    .contact-glass-card__heading {
+        font-size: 38px;
+        text-align: center;
+    }
+
+    .contact-glass-card__about-text {
+        padding: 0 5% 3% 5%;
+        font-size: 22px;
+        text-align: center;
+        width: 90%;
+    }
+
+    .contact-glass-card__text {
+        padding: 0 5% 3% 5%;
+        font-size: 28px;
+        font-weight: 500;
+        text-align: center;
+        width: 60%;
+
+        a {
+            color: #00f7b7;
+        }
+    }
+}
+
+@keyframes fade-in-contact {
+    from {
+        opacity: 0%;
+        background-image: url("../../public/assets/Contact-LR.webp");
+    }
+
+    to {
+        opacity: 100%;
+        background-image: url("../../public/assets/Contact.webp");
+    }
+}
+
+@keyframes fade-in-contact-tablet {
+    from {
+        opacity: 0%;
+        background-image: url("../../public/assets/Contact-Mobile-LR.webp");
+    }
+
+    to {
+        opacity: 100%;
+        background-image: url("../../public/assets/Contact-Mobile.webp");
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .contact-container {
+        animation: fade-in-contact-tablet 2s ease-in-out 1;
+        animation-fill-mode: forwards;
+    }
+
+    .contact-glass-card {
+        top: 20px;
+        width: 80%;
+        height: 70% !important;
+    }
+
+    .contact-glass-card__about-text {
+        padding: 0 !important;
+        font-size: 3.3vw !important;
+        width: 95% !important;
+    }
+
+    .contact-glass-card__text {
+        padding: 0 !important;
+        font-size: 4.1vw !important;
+        width: 86% !important;
+    }
+}
+
+@media (max-width: $breakpoint-cellphone) {
+    .contact-glass-card {
+        justify-content: space-evenly;
+    }
+
+    .contact-glass-card__heading {
+        font-size: 7vw !important;
+        padding: 3% 0 3% 0;
+    }
+
+    .contact-glass-card__about-text {
+        font-size: 3.9vw !important;
+    }
+
+    .contact-glass-card__text {
+        font-size: 4.5vw !important;
+    }
+}
+
+@media (max-width: $breakpoint-sml-cellphone) {
+    .contact-glass-card__about-text {
+        font-size: 4.4vw !important;
+    }
+
+    .contact-glass-card__text {
+        font-size: 5.3vw !important;
+    }
+}
+
+@media (max-width: $breakpoint-xsml-cellphone) {
+    .contact-glass-card__about-text {
+        font-size: 5.1vw !important;
+    }
+
+    .contact-glass-card__text {
+        font-size: 5.9vw !important;
+    }
+}

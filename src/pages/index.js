@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Genos } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import HomePage from ".//_home.js";
+import ProjectsPage from ".//_projects";
+import ContactPage from ".//_contact";
 
 const genos = Genos({ subsets: ["latin"], weight: ["400"] });
 
@@ -21,8 +23,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`${styles.main} ${genos.className}`}>
-                <div className={styles.description}>Migrated Site</div>
                 <HomePage />
+                <ProjectsPage />
+                <ContactPage />
             </main>
         </>
     );
