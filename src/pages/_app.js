@@ -1,9 +1,7 @@
 // import Route from "../components/Route";
 // import Lnk from "../components/Link";
+import { Genos } from "next/font/google";
 import Link from "next/link";
-import HomePage from ".//_home.js";
-import ProjectsPage from ".//_projects";
-import ContactPage from ".//_contact";
 import "@/styles/globals.scss";
 import "../styles/Home.scss";
 import "../styles/Projects.scss";
@@ -12,10 +10,12 @@ import homeIcon from "../../public/assets/home-1.svg";
 import projectsIcon from "../../public/assets/projects.svg";
 import contactIcon from "../../public/assets/phone.svg";
 
+const genos = Genos({ subsets: ["latin"], weight: ["400", "600"] });
+
 export default function App({ Component, pageProps }) {
     return (
-        <div className="container">
-            <Component {...pageProps} />;
+        <div className={`container ${genos.className}`}>
+            <Component {...pageProps} />
             {/* <div>
                 <Route path="/">
                     <HomePage path="/" />
