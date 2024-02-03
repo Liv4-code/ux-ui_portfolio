@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Genos } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import HomePage from ".//_home.js";
 import ProjectsPage from ".//_projects";
 import ContactPage from ".//_contact";
@@ -22,10 +21,10 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={`${styles.main} ${genos.className}`}>
+            <main className={genos.className}>
                 <HomePage />
-                <ProjectsPage />
-                <ContactPage />
+                {/* <ProjectsPage />
+                <ContactPage /> */}
             </main>
         </>
     );
